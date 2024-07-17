@@ -1,0 +1,158 @@
+body {
+  margin: 70px; 
+  padding: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc765;
+}
+
+#card {
+  width: 0; 
+  height: 0; 
+  border-top: 100px solid #63c2e2;
+  border-right: 170px solid #c1e1ec;
+  border-bottom: 100px solid #63c2e2;
+  border-left: 170px solid #c1e1ec;
+  box-shadow: 10px 10px 5px #f7b23c;
+}
+
+.sad-face {
+  width: 50px;
+  height: 50px;
+  background-color: #ff1414;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: heartbeat 1.4s infinite; 
+}
+
+.sad-face::before, .sad-face::after {
+  content: "";
+  position: absolute;
+  background-color: #292727;
+  border-radius: 50%;
+}
+
+.sad-face::before {
+  width: 8px;
+  height: 8px;
+  top: 15px;
+  left: 15px;
+}
+
+.sad-face::after {
+  width: 8px;
+  height: 8px;
+  top: 15px;
+  right: 15px;
+}
+
+.sad-face .mouth {
+  position: absolute;
+  bottom: 10px;
+  width: 20px;
+  height: 10px;
+  border: 2px solid #292727;
+  border-radius: 0 0 20px 20px;
+  border-top: none;
+}
+
+@keyframes heartbeat {
+  0%, 25% { transform: scale(1); }
+  30%, 70% { transform: scale(1.4); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.sad-face1 {
+  transform: translate(-50%, -160%); 
+  animation: sad-face1 2.5s ease-out 1s infinite; 
+}
+
+.sad-face2 {
+  transform: translate(-50%, -250%); 
+  animation: sad-face2 4s ease-out 1s infinite; 
+}
+
+.sad-face3 {
+  transform: translate(-50%, -350%); 
+  animation: sad-face3 2s ease-out 1s infinite; 
+}
+
+.sad-face4 {
+  transform: translate(-50%, -450%); 
+  animation: sad-face4 2.3s ease-out 1s infinite; 
+}
+
+@keyframes sad-face1 {
+  0% { transform: translateY(-200%) translateX(0) scale(0.25); opacity: 1; }
+  100% { transform: translateY(-400%) translateX(0) scale(1); opacity: 0; }
+}
+
+@keyframes sad-face2 {
+  0% { transform: translateY(-300%) translateX(-100%) scale(0.25); opacity: 0.2; }
+  100% { transform: translateY(-500%) translateX(-10%) scale(1); opacity: 0; }
+}
+
+@keyframes sad-face3 {
+  0% { transform: translateY(-430%) translateX(-100%) scale(0.25); opacity: 0.2; }
+  100% { transform: translateY(-650%) translateX(-10%) scale(1); opacity: 0; }
+}
+
+@keyframes sad-face4 {
+  0% { transform: translateY(-450%) translateX(-100%) scale(0.25); opacity: 0.2; }
+  100% { transform: translateY(-750%) translateX(-10%) scale(1); opacity: 0; }
+}
+
+.text {
+  position: absolute;
+  bottom: 16%;
+  margin: 10px;
+}
+
+p {
+  font-size: 25px;
+  color: #292727;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  body {
+      margin: 60px 0px; /* Reduce the margin for smaller screens */
+  }
+
+  #card {
+      border-top-width: 50px;
+      border-right-width: 85px;
+      border-bottom-width: 50px;
+      border-left-width: 85px;
+      box-shadow: 5px 5px 2.5px #f7b23c;
+  }
+
+  .sad-face {
+      width: 24px; /* Reduce the size for smaller screens */
+      height: 24px;
+  }
+
+  .sad-face::before, .sad-face::after {
+      width: 4px;
+      height: 4px;
+  }
+
+  .sad-face .mouth {
+      width: 12px;
+      height: 6px;
+      border-width: 1px;
+  }
+
+  .text {
+      bottom: 10%;
+  }
+
+  p {
+      font-size: 18px; /* Reduce the font size for smaller screens */
+  }
+}

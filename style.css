@@ -1,0 +1,55 @@
+:root {
+  --theme-color: #285685;
+  --font-color: #ffc765;
+  --shade1: rgba(242, 38, 19, 0.5);
+  --shade2: rgba(0, 255, 255, 0.5);
+}
+
+body {
+  background-color: black;
+  font-family: Chaucer;
+  color: var(--font-color);
+
+  display: flex;
+  justify-content: center;
+}
+
+.textCont {
+  font-size: 150%;
+
+  margin-top: 10%;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 60%;
+  height: 80%;
+}
+
+div.textCont::after {
+  content: "|";
+  animation: blinky 1s linear infinite;
+}
+
+@keyframes blinky {
+  0% {
+    opacity: 0;
+  }
+  49.9% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  99.9% {
+    opacity: 1;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .textCont {
+    font-size: 120%; /* Adjust the font size for smaller screens */
+    margin-top: 20%;
+    width: 90%; /* Increase the width to better fit mobile screens */
+    height: auto; /* Allow the height to adjust based on content */
+  }
+}
